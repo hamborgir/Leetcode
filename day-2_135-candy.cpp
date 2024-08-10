@@ -38,7 +38,8 @@ public:
             if (curr > prev) offset++;
 
             // TODOS: FIX THIS CONDT
-            else if ((prev <= curr && curr >= next) || (curr < prev)) offset--;
+            else if ((prev < curr || curr > next)) offset++;
+            else offset--;
 
             if (offset < level) {
                 sum += (i+1);
